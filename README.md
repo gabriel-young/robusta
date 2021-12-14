@@ -1,7 +1,7 @@
 ## Headline
 
 This is a coding challenge to implement a payment engine script reading transactions from a CSV, updating client accounts, 
-handle disputes and chargebacks, and finally produce standard output the state of clients accounts.
+handle disputes and chargebacks, and finally produce standard output on state of clients accounts.
 
 ## CLI usage
 
@@ -9,7 +9,7 @@ handle disputes and chargebacks, and finally produce standard output the state o
 usage: payment_engine.py [-h] input_file
 
 Payments engine that reads a series of transactions from a CSV file, handles disputes
-and chargebacks, and then outputs the state of clients accounts.
+and chargebacks, and then output on state of clients accounts.
 
 positional arguments:
   input_file
