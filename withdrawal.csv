@@ -1,0 +1,3 @@
+type, client, tx, amount
+deposit, 1, 1, 26.83432
+withdrawal, 1, 2, 12.84564
