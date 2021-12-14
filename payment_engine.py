@@ -3,10 +3,9 @@ and chargebacks, and then outputs the state of clients accounts."""
 
 import argparse
 import csv
-
-# Constants
 import sys
 
+# Constants
 DEPOSIT = 'deposit'
 WITHDRAWAL = 'withdrawal'
 AVAILABLE = 'available'
