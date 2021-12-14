@@ -1,2 +1,3 @@
 type, client, tx, amount
 deposit, 1, 1, 45.939394
+deposit, 1, 2, 45.939394

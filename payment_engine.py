@@ -37,6 +37,15 @@ def get_client_transactions_from_csv_file(input_file):
                         transaction_id = int(transaction_id) % 2 ** 32
                         transaction_type = str(transaction_type)
                         amount = float(f'{float(amount):.4f}')
+
+                        if client not in transactions:
+                            transactions[client] = []
+
+                        transactions[client].append([
+                            transaction_id,
+                            transaction_type,
+                            amount
+                        ])
                     except ValueError:
                         sys.exit(
                             f"DataType for type must be a string. Value: {transaction_type}\n"
@@ -44,15 +53,6 @@ def get_client_transactions_from_csv_file(input_file):
                             f"DataType for tx must be an integer. Value: {transaction_id}\n"
                             f"DataType for amount must be a float. Value: {amount}"
                         )
-
-                    if client not in transactions:
-                        transactions[client] = []
-
-                    transactions[client].append([
-                        transaction_id,
-                        transaction_type,
-                        amount
-                    ])
     except FileNotFoundError:
         print(f"Input File:{input_file} not found")
 
@@ -209,8 +209,12 @@ def main():
     if accounts:
         print('client,available,held,total,locked')
         for client, account in accounts.items():
-            print(f"{client},{account[AVAILABLE]},{account[HELD]},"
-                  f"{account[TOTAL]},{account[LOCKED]}")
+            available = float(f"{account[AVAILABLE]:.4f}")
+            held = float(f"{account[HELD]:.4f}")
+            total = float(f"{account[TOTAL]:.4f}")
+            locked = account[LOCKED]
+
+            print(f"{client},{available},{held},{total},{locked}")
 
 
 if __name__ == '__main__':
